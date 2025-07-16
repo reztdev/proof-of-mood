@@ -74,7 +74,6 @@ const ProofOfMoodDApp = () => {
       checkRegistration(accounts[0]);
     } catch (error) {
       console.error('Error connecting wallet:', error);
-      // Untuk demo, tetap set account jika MetaMask tidak tersedia
       const demoAccount = '0x1234567890123456789012345678901234567890';
       setAccount(demoAccount);
       checkRegistration(demoAccount);
@@ -82,7 +81,6 @@ const ProofOfMoodDApp = () => {
   };
 
   const checkRegistration = async (address) => {
-    // Mock check - in real app, call smart contract
     setIsRegistered(true);
     setHasCheckedInToday(false);
     setMoodHistory(mockMoodHistory);
@@ -190,7 +188,6 @@ const ProofOfMoodDApp = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-400 p-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 mb-6 border border-white/20">
           <div className="flex justify-between items-center">
             <div>
