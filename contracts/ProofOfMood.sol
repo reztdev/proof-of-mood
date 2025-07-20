@@ -15,7 +15,6 @@ contract ProofOfMood {
     function checkIn(uint8 _moodLevel) external {
         require(_moodLevel >= 1 && _moodLevel <= 5, "Mood level must be 1-5");
 
-        // Hitung reset harian jam 6 pagi (UTC)
         uint256 currentDay = (block.timestamp + 18 hours) / 1 days;
 
         require((lastCheckIn[msg.sender] + 18 hours) / 1 days < currentDay, "Already checked in today");
