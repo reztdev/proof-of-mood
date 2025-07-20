@@ -281,8 +281,6 @@ useEffect(() => {
           setLastCheckinTime(lastCheckin);
           const alreadyCheckedIn = !canCheckInToday(lastCheckin);
           setHasCheckedInToday(alreadyCheckedIn);
-
-          // ⏱️ langsung set countdown biar muncul setelah reload
           if (alreadyCheckedIn) {
             const next6AM = getNext6AM();
             const timeLeft = next6AM - Date.now();
@@ -314,7 +312,7 @@ useEffect(() => {
     if (timeLeft <= 0) {
       setHasCheckedInToday(false);
       setCountdown('');
-      clearInterval(interval); // stop interval saat countdown habis
+      clearInterval(interval);
       return;
     }
 
